@@ -1,0 +1,41 @@
+% Vertex Dimension — austere monochrome typesetting.
+% Pandoc include-in-header (-H). Pairs with documentclass=ctexart + xelatex.
+% Brand: pure black on white, zero decoration, restraint as premium.
+
+\usepackage{graphicx}
+\graphicspath{{figures/}{../figures/}}
+\usepackage{titling}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{newunicodechar}
+
+% --- Symbols that the Latin main font may lack: route to math glyphs ---
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{←}{\ensuremath{\leftarrow}}
+\newunicodechar{↑}{\ensuremath{\uparrow}}
+\newunicodechar{↓}{\ensuremath{\downarrow}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+
+% --- Paragraphs: no indent, modest leading (clean, modern) ---
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em plus 0.1em minus 0.05em}
+\linespread{1.12}
+
+% --- Title block: centered, a thin rule beneath; date italic small ---
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vskip 0.4em\begin{center}\rule{0.46\textwidth}{0.4pt}\end{center}\vskip 0.2em}
+\predate{\begin{center}\footnotesize\itshape}
+\postdate{\par\end{center}}
+
+% --- Running head: wordmark left, page right, thin rule ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textsc{Vertex Dimension}}
+\fancyhead[R]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{14pt}
